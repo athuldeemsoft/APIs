@@ -13,7 +13,7 @@
         ```
 
 - Image list by user id.
-    - GET: /Images/userid/:user_id
+    - GET: /Images/userid/:id
         - Res
         ```
         [<image_object>,...]
