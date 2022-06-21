@@ -5,8 +5,8 @@
         ```
         [
             {
-                "userid": <id>,
-                "images": [<image_object>,...]
+                userid: <id>,
+                images: [<image_object>,...]
             },
             ...
         ]
@@ -16,10 +16,7 @@
     - GET: /Images/userid/<int:user_id>
         - Res
         ```
-        [
-            <image_object>,
-            ...
-        ]
+        [<image_object>,...]
         ```
 
 - Start/Stop image prediction.
@@ -27,8 +24,8 @@
         - Res
         ```
         {
-            "success": "__", 
-            "status": "__"
+            success: "__", 
+            status: "__"
         }
         ```
 
@@ -37,10 +34,7 @@
     - GET: /LogInfo/<string:image_unique_id>
         - Res
         ```
-        [
-            <log_object>,
-            ...
-        ]
+        [<log_object>,...]
         ```
 
 - Add/Remove userid from images.
@@ -49,16 +43,16 @@
         - Req
         ```
         {
-            "userid": <id>,
-            "imageid": <image_unique_id>
+            userid: <id>,
+            imageid: <image_unique_id>
         }
         ```
 
         - Res
         ```
         {
-            "success": "__",
-            "msg": "__",
-            "users": [<id>,...]
+            success: "__",
+            msg: "__",
+            users: [<id>,...]
         }
         ```
