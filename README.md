@@ -13,14 +13,14 @@
         ```
 
 - Image list by user id.
-    - GET: /Images/userid/<int:user_id>
+    - GET: /Images/userid/:user_id
         - Res
         ```
         [<image_object>,...]
         ```
 
 - Start/Stop image prediction.
-    - GET: /Images/predict/<string:image_unique_id>
+    - GET: /Images/predict/:image_unique_id
         - Res
         ```
         {
@@ -31,7 +31,7 @@
 
 - Log info list.
     - GET: /LogInfo
-    - GET: /LogInfo/<string:image_unique_id>
+    - GET: /LogInfo/:image_unique_id
         - Res
         ```
         [<log_object>,...]
