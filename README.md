@@ -1,7 +1,7 @@
 # API List
 - Users & Images list.
     - GET: /Users/imagelist
-        Response
+        - Response
         ```
         [
             {
@@ -14,7 +14,7 @@
 
 - Image list by user id.
     - GET: /Images/userid/:id
-        Response
+        **Response**
         ```
         [<image_object>,...]
         ```
