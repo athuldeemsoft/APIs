@@ -14,6 +14,7 @@
 
 - Image list by user id.
     - GET: /Images/userid/:id
+        
         **Response**
         ```
         [<image_object>,...]
