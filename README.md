@@ -23,7 +23,8 @@
 
 - Start/Stop image prediction.
     - GET: /Images/predict/:image_unique_id
-        Response
+        
+        **Response**
         ```
         {
             success: __, 
