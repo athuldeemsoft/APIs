@@ -1,7 +1,7 @@
 # API List
 - Users & Images list.
     - GET: /Users/imagelist
-        - Res
+        Response
         ```
         [
             {
@@ -14,17 +14,17 @@
 
 - Image list by user id.
     - GET: /Images/userid/:id
-        - Res
+        Response
         ```
         [<image_object>,...]
         ```
 
 - Start/Stop image prediction.
     - GET: /Images/predict/:image_unique_id
-        - Res
+        Response
         ```
         {
-            success: "__", 
+            success: __, 
             status: "__"
         }
         ```
@@ -32,7 +32,7 @@
 - Log info list.
     - GET: /LogInfo
     - GET: /LogInfo/:image_unique_id
-        - Res
+        Response
         ```
         [<log_object>,...]
         ```
@@ -40,7 +40,7 @@
 - Add/Remove userid from images.
     - POST: /Images/adduser/
     - POST: /Images/removeuser/
-        - Req
+        Request
         ```
         {
             userid: <id>,
@@ -48,11 +48,20 @@
         }
         ```
 
-        - Res
+        Response
         ```
         {
-            success: "__",
+            success: __,
             msg: "__",
             users: [<id>,...]
+        }
+        ```
+- Delete image.
+    - DELETE: /Images/:image_unique_id
+        Response
+        ```
+        {
+            success: __,
+            status: "__"
         }
         ```
