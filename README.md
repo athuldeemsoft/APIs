@@ -1,7 +1,8 @@
 # API List
 - Users & Images list.
     - GET: /Users/imagelist
-        - Response
+        
+        **Response**
         ```
         [
             {
@@ -33,7 +34,8 @@
 - Log info list.
     - GET: /LogInfo
     - GET: /LogInfo/:image_unique_id
-        Response
+        
+        **Response**
         ```
         [<log_object>,...]
         ```
@@ -41,7 +43,8 @@
 - Add/Remove userid from images.
     - POST: /Images/adduser/
     - POST: /Images/removeuser/
-        Request
+        
+        **Request**
         ```
         {
             userid: <id>,
@@ -49,7 +52,7 @@
         }
         ```
 
-        Response
+        **Response**
         ```
         {
             success: __,
@@ -59,7 +62,8 @@
         ```
 - Delete image.
     - DELETE: /Images/:image_unique_id
-        Response
+        
+        **Response**
         ```
         {
             success: __,
