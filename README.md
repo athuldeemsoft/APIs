@@ -21,14 +21,26 @@
         [<image_object>,...]
         ```
 
-- Start/Stop image prediction.
-    - GET: /Images/predict/:image_unique_id
+- Start image prediction.
+    - GET: /Images/startpredict/:image_unique_id
         
         **Response**
         ```
         {
             success: __, 
-            status: "__"
+            status: "__",
+            image: <object>
+        }
+        ```
+- Stop image prediction.
+    - GET: /Images/stoppredict/:image_unique_id
+        
+        **Response**
+        ```
+        {
+            success: __, 
+            status: "__",
+            image: <object>
         }
         ```
 
