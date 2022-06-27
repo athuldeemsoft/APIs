@@ -53,14 +53,14 @@
         [<log_object>,...]
         ```
 
-- Add/Remove userid from images.
-    - POST: /Images/adduser/
-    - POST: /Images/removeuser/
+- Add/Remove userid to images Shared column.
+    - POST: /Images/adduser
+    - POST: /Images/removeuser
         
         **Request**
         ```
         {
-            userid: <id>,
+            userid: [<int:id>,<int:id>,...],
             imageid: <image_unique_id>
         }
         ```
@@ -69,8 +69,8 @@
         ```
         {
             success: __,
-            msg: "__",
-            users: [<id>,...]
+            status: "__",
+            image: <object>
         }
         ```
 - Delete image.
