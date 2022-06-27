@@ -53,7 +53,7 @@
         [<log_object>,...]
         ```
 
-- Add/Remove userid to images Shared column.
+- Add/Remove userid to image's Shared column.
     - POST: /Images/adduser
     - POST: /Images/removeuser
         
