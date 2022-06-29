@@ -83,3 +83,24 @@
             status: "__"
         }
         ```
+        
+- Add log.
+    - POST: /LogInfo
+    
+        **Request**
+        ```
+        {
+            imageid:"8639e81f98bd42f7b29fa2efabebbaf3",
+            type: "Tiling",
+            message: "Tiling is running"
+        }
+        ```
+        
+        **Response**
+        ```
+        {
+            success: True/False,
+            msg: "___"
+        }
+        ```
+        
