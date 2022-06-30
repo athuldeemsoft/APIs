@@ -53,9 +53,10 @@
         [<log_object>,...]
         ```
 
-- Add/Remove userid to image's Shared column.
+- Add/Remove/Update userid to image's Shared column.
     - POST: /Images/adduser
     - POST: /Images/removeuser
+    - POST: /Images/updateuser
         
         **Request**
         ```
