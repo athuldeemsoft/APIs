@@ -1,4 +1,4 @@
-# API List
+# PathomIQ API List
 - Users & Images list.
     - GET: /Users/imagelist
         
