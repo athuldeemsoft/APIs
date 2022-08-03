@@ -105,15 +105,17 @@
         }
         ```
         
-- Upload files (.xml) for annotation
+- Upload files (.xml) for annotation.
       - POST: /Annotations/upload/:image_unique_id/:file_type
       
             **Response**
+            
             ```
             {
                 'status': 'Done'
             }
             ```
+            
       *Send file as 'upload_file'
             
 - User directory tree info
