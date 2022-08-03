@@ -106,13 +106,12 @@
         ```
         
 - Upload files (.xml) for annotation.
-      - POST: /Annotations/upload/:image_unique_id/:file_type
+    - POST: /Annotations/upload/:image_unique_id/:file_type
       
             **Response**
-            
             ```
             {
-                'status': 'Done'
+                status: 'Done'
             }
             ```
             
