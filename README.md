@@ -105,3 +105,21 @@
         }
         ```
         
+- Upload files (.xml) for annotation
+      - POST: /Annotations/upload/:image_unique_id/:file_type
+      
+            **Response**
+            ```
+            {
+                'status': 'Done'
+            }
+            ```
+      *Send file as 'upload_file'
+            
+- User directory tree info
+    - GET: /Users/treeinfo/:id
+    - PUT: /Users/treeinfo/:id
+    - DELETE: /Users/treeinfo/:id
+    
+    *Data will be in string format
+        
