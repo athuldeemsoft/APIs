@@ -123,4 +123,8 @@
     - DELETE: /Users/treeinfo/:id
     
     *Data will be in string format
+    
+- Get Tissue area, cancer volume and gleason grade values of image.
+    - GET: /Images/metric/<int:id>
+    *This data will be generated only after user edits the annotation. The response will be a JSON object that converted to string. This data will also be present in the response when saving annoatation.
         
