@@ -117,12 +117,74 @@
             
       *Send file as 'upload_file'
             
-- User directory tree info
+- User Directory Tree
+    # Get user directory.
     - GET: /Users/treeinfo/:id
-    - PUT: /Users/treeinfo/:id
-    - DELETE: /Users/treeinfo/:id
+        Default (initial) response data will look like below, this will be the root directory. When creating initial folders the parent value need to be the same as the id of its parent/outer folder (directory). The children array will contain the id of all the children a folder have. 
+        
+        ```
+        [
+          {
+            "id": "root",
+            "name": "root",
+            "type": "folder",
+            "parent": "None",
+            "children": [],
+            "props": {}
+          }
+        ]
+        ```
+        
+    # Create new folder/file.
+    - POST: /Users/treeinfo/:id
+        When creating a folder/file the request should contain these values.
     
-    *Data will be in string format
+        ```
+        {
+          "name": "folder/file name",
+          "type": "folder/file",
+          "parent": "parent folder id",
+          "children": [],
+          "props": {}
+        }
+        ```
+        
+        *All fields are necessary, the response will be the updated array.
+        
+    # Update folder/file name or props.
+    - PUT: /Users/treeinfo/:id
+        User can alter the name/props of folder/file, the request should contain these values.
+        
+        ```
+        {
+          "name": "folder/file name",
+          "type": "folder/file",
+          "parent": "parent folder id",
+          "children": [],
+          "props": {},
+          "id" : "folder id"
+        }
+        ```
+        
+        *Only id, name and props fields are necessary, the response will be the updated array.
+        
+    # Delete a folder/file.
+    - DELETE: /Users/treeinfo/:id
+        The request should have these values
+        
+         ```
+        {
+          "name": "folder/file name",
+          "type": "folder/file",
+          "parent": "parent folder id",
+          "children": [],
+          "props": {},
+          "id" : "folder id"
+        }
+        ```
+        
+        *Only id and parent fields are necessary.
+  
     
 - Get Tissue area, Cancer volume and Gleason grade values of image.
     - GET: /Images/metric/:id
