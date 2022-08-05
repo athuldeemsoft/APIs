@@ -118,10 +118,12 @@
       *Send file as 'upload_file'
             
 - User Directory Tree
-    # Get user directory.
+    **Get user directory.**
     - GET: /Users/treeinfo/:id
+        
         Default (initial) response data will look like below, this will be the root directory. When creating initial folders the parent value need to be the same as the id of its parent/outer folder (directory). The children array will contain the id of all the children a folder have. 
         
+        **Response**
         ```
         [
           {
@@ -135,10 +137,12 @@
         ]
         ```
         
-    # Create new folder/file.
+    **Create new folder/file.**
     - POST: /Users/treeinfo/:id
+        
         When creating a folder/file the request should contain these values.
     
+        **Request**
         ```
         {
           "name": "folder/file name",
@@ -151,10 +155,12 @@
         
         *All fields are necessary, the response will be the updated array.
         
-    # Update folder/file name or props.
+    **Update folder/file name or props.**
     - PUT: /Users/treeinfo/:id
+        
         User can alter the name/props of folder/file, the request should contain these values.
         
+        **Request**
         ```
         {
           "name": "folder/file name",
@@ -168,10 +174,12 @@
         
         *Only id, name and props fields are necessary, the response will be the updated array.
         
-    # Delete a folder/file.
+    **Delete a folder/file.**
     - DELETE: /Users/treeinfo/:id
+        
         The request should have these values
         
+        **Request**
          ```
         {
           "name": "folder/file name",
