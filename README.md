@@ -118,6 +118,7 @@
       *Send file as 'upload_file'
             
 - User Directory Tree
+    
     **Get user directory.**
     - GET: /Users/treeinfo/:id
         
