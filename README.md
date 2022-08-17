@@ -192,7 +192,7 @@
           **Request**
             ```
            {
-                "upload_file": file
+                "upload_file": file,
                 "imageid": 548,
                 "userid": 19,
                 "fileid": <image_unique_id>
