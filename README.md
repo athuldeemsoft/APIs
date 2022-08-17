@@ -187,7 +187,7 @@
         *All fileds are not necessary, only the ones are required is enough.
             
 - Upload and Download XML files.
-    -  Upload XML for annotation.
+    -  Upload XML for annotation, POST: /Annotations/upload
            
           **Request**
             ```
