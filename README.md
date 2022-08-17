@@ -217,5 +217,5 @@
             }
             ```
             
-     *To download the XML use the *base_raw_download_url* value from the image data. Eg: <image.base_raw_download_url>/<image.image_unique_id>_complete_net_prediction.xml
+     To download the XML use the *base_raw_download_url* value from the image data. Eg: <image.base_raw_download_url>/<image.image_unique_id>_complete_net_prediction.xml
             
