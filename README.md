@@ -170,7 +170,7 @@
             }
             ```
       
-    - Update image data in the database table, PUT: /Images         
+    - Update image data in the database table, PUT: /Images/<int:id>         
     
         **Request**
          ```
