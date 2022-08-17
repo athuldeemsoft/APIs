@@ -105,7 +105,7 @@
         }
         ```
                   
-- Image operations.
+- Image upload/download operations.
     - Add image data into database table, POST: /Images         
     
         **Request**
@@ -175,7 +175,7 @@
         **Request**
          ```
         {
-          "status": "xxxxxxxxxxxx",
+          "status": "Uploaded",
           "entity_id": 4,
           "patient_id": 3,
           "location": "dddddddddddddd",
