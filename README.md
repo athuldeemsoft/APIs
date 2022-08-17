@@ -104,25 +104,7 @@
             msg: "___"
         }
         ```
-        
-- Upload files (.xml) for annotation.
-    - POST: /Annotations/upload
-
-            **Request**
-            ```
-            {
-                upload_file: file,
-                imageid: 22,
-                userid: 2,
-                fileid: 'xxxxxxxxxxxxxxxx'
-            }
-            ```
-      
-            **Response**
-            ```
-            { status: 'Done' }
-            ```
-            
+                  
 - Image operations.
     - Add image data into database table, POST: /Images         
     
@@ -205,9 +187,9 @@
         *All fileds are not necessary, only the ones are required is enough.
             
 - Upload and Download XML files.
-      - Upload XML for annotation.
-
-            **Request**
+    -  Upload XML for annotation.
+           
+          **Request**
             ```
            {
                 "upload_file": file
@@ -217,5 +199,5 @@
             }
             ```
             
-     To download the XML use the *base_raw_download_url* value from the image data. Eg: <image.base_raw_download_url>/<image.image_unique_id>_complete_net_prediction.xml
+     - To download the XML use the *base_raw_download_url* value from the image data. Eg: <image.base_raw_download_url>/<image.image_unique_id>_complete_net_prediction.xml
             
