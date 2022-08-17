@@ -106,93 +106,116 @@
         ```
         
 - Upload files (.xml) for annotation.
-    - POST: /Annotations/upload/:image_unique_id/:file_type
+    - POST: /Annotations/upload
+
+            **Request**
+            ```
+            {
+                upload_file: file,
+                imageid: 22,
+                userid: 2,
+                fileid: 'xxxxxxxxxxxxxxxx'
+            }
+            ```
       
             **Response**
             ```
-            {
-                status: 'Done'
-            }
+            { status: 'Done' }
             ```
             
-      *Send file as 'upload_file'
-            
-- User Directory Tree
+- Image operations.
+    - Add image data into database table, POST: /Images         
     
-    - GET: /Users/treeinfo/:id
-        
-        Default (initial) response data will look like below, this will be the root directory. When creating initial folders the parent value need to be the same as the id of its parent/outer folder (directory). The children array will contain the id of all the children a folder have. 
+        **Request**
+        ```
+        {
+          "patient_id": 1,
+          "entity_id": 4,
+          "filename": "Test.png",
+          "userid": 19,
+          "workarea": 6,
+          "study": 5
+        }
+        ```
         
         **Response**
         ```
-        [
-          {
-            "id": "root",
-            "name": "root",
-            "type": "folder",
-            "parent": "None",
-            "children": [],
-            "props": {}
+        {
+          "id": 78,
+          "image_unique_id": "d3171c32ce9448f387319b4e1dc6d292",
+          "workarea_id": null,
+          "entity_id": "4",
+          "study_id": null,
+          "patient_id": "1",
+          "filename": "Test.png",
+          "location": null,
+          "description": null,
+          "workarea": null,
+          "study": null,
+          "adddate": "2022-08-17 06:59:27.530508",
+          "moddate": "2022-08-17 06:59:27.530508",
+          "status": "In Progress",
+          "base_download_url": null,
+          "base_raw_download_url": null,
+          "tissue_area": null,
+          "outcome_prediction": null,
+          "shared": "19",
+          "annotation_status": "Pending",
+          "tissuearea_status": "Pending",
+          "tiling_status": "Pending",
+          "metric": null,
+          "response": {
+            "url": "https://pathomiq-dev.s3.amazonaws.com/",
+            "key": "d3171c32ce9448f387319b4e1dc6d292",
+            "AWSAccessKeyId": "AKIA3EZURXYHVJR7DR7X",
+            "policy": "eyJleHBpcmF0aW9uIjogIjIwMjItMDgtMTdUMDc6NTk6MjdaIiwgImNvbmRpdGlvbnMiOiBbeyJidWNrZXQiOiAicGF0aG9taXEtZGV2In0sIHsia2V5IjogImQzMTcxYzMyY2U5NDQ4ZjM4NzMxOWI0ZTFkYzZkMjkyIn1dfQ==",
+            "signature": "FKbPpy54hLCU8cQ/M75XXmWnE2c="
           }
-        ]
+        }
         ```
         
-    - POST: /Users/treeinfo/:id
-        
-        When creating a folder/file the request should contain these values.
+    - Upload file to AWS, use the response.url from the POST: /Images response data as the AWS url and request a POST method.
+
+            **Request**
+            ```
+            {
+                file: file,
+                AWSAccessKeyId: <>,
+                key: <>,
+                policy: <>,
+                signature: <>,
+                upload_file: 'true'
+            }
+            ```
+      
+    - Update image data in the database table, PUT: /Images         
     
-        **Request**
-        ```
-        {
-          "name": "folder/file name",
-          "type": "folder/file",
-          "parent": "parent folder id",
-          "children": [],
-          "props": {}
-        }
-        ```
-        
-        *All fields are necessary, the response will be the updated array.
-        
-    - PUT: /Users/treeinfo/:id
-        
-        User can alter the name/props of folder/file, the request should contain these values.
-        
-        **Request**
-        ```
-        {
-          "name": "folder/file name",
-          "type": "folder/file",
-          "parent": "parent folder id",
-          "children": [],
-          "props": {},
-          "id" : "folder id"
-        }
-        ```
-        
-        *Only id, name and props fields are necessary, the response will be the updated array.
-        
-    - DELETE: /Users/treeinfo/:id
-        
-        The request should have these values
-        
         **Request**
          ```
         {
-          "name": "folder/file name",
-          "type": "folder/file",
-          "parent": "parent folder id",
-          "children": [],
-          "props": {},
-          "id" : "folder id"
+          "status": "xxxxxxxxxxxx",
+          "entity_id": 4,
+          "patient_id": 3,
+          "location": "dddddddddddddd",
+          "workarea_id": 6,
+          "description": "xxxxxxxx"
+          "study_id": 5
         }
         ```
-        
-        *Only id and parent fields are necessary.
-  
-    
-- Get Tissue area, Cancer volume and Gleason grade values of image.
-    - GET: /Images/metric/:id
-   
-    *This data will be generated only after user edits the annotation. The response will be a JSON object that converted to string. This data will also be present in the response when saving annotation.
-        
+        *All fileds are not necessary, only the ones are required is enough.
+            
+- Upload and Download XML files.
+      - Upload XML for annotation.
+
+            **Request**
+            ```
+           {
+                "upload_file": file
+                "imageid": 548,
+                "userid": 19,
+                "fileid": <image_unique_id>
+            }
+            ```
+            
+     *To download the XML use the *base_raw_download_url* value from the image data. Eg: <image.base_raw_download_url>/<image.image_unique_id>_complete_net_prediction.xml
+            
