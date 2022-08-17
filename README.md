@@ -158,7 +158,7 @@
         
     - Upload file to AWS, use the response.url from the POST: /Images response data as the AWS url and request a POST method.
 
-            **Request**
+           **Request**
             ```
             {
                 file: file,
