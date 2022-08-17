@@ -186,7 +186,7 @@
         ```
         *All fileds are not necessary, only the ones are required is enough.
         
-    - Download image file, GET: S3/file/<image_unique_id>
+    - Download image file, GET: /S3/file/<image_unique_id>
             
 - Upload and Download XML files.
     -  Upload XML for annotation, POST: /Annotations/upload
